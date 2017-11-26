@@ -12,11 +12,12 @@ Submission :
 
 
 1. Find the authors with most influence on submission. It is  some kind of finding
-the users with submission where lots of  comments done.
+the users with submission where lots of  comments done. (influenceAuthor)
 
-2. Find based on what the influence (comment influence) varies foremost (like  upvote,  downvote, numberOfComments,
-over_18) among the submissions. Here  we can find the pairwise cdf of (upvote, numberOfComments),
-(downvote, numberOfComments), (over_18, numberOfComments), (media_embed, numberOfComments)  etc
+2. Find based on what the influence (comment influence) varies foremost (like  upvote,  downvote,
+numberOfComments, over_18) among the submissions of subreddits. Here  we can find the pairwise cdf of (upvote,
+numberOfComments), (downvote, numberOfComments), (over_18, numberOfComments), (media_embed,
+numberOfComments)  etc.
 
 Suppose for  pariwise cdf  (upvote, numberOfComments) we can show if there is any relation between
 numberOfComments  and upvote  count among all  of the submission available in reddit.
@@ -24,10 +25,16 @@ numberOfComments  and upvote  count among all  of the submission available in re
 The same  goes for  other parts also (downvote, numberOfComments), (over_18, numberOfComments),
 (media_embed, numberOfComments)
 
+(influenceMatrix)
+
 3. Find subreddits with number of submissions. (Subreddits with  most number of submissions)
+
+(mostsubmission)
 
 4. Is there any relation between comments per subreddit and  submission per subreddit ?
 (Is there any relation of having more/less comment if a subreddit  has  more/less submission)
+
+(comments per subreddit)
 
 5. Number of Submissions created on each day.
 

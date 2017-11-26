@@ -3,7 +3,12 @@ package com.uab.bdp.model;
 import com.google.gson.annotations.SerializedName;
 
 public class Submission {
-    @SerializedName("num_comments")
+    public static final String UP_VOTE_KEY = "ups";
+    public static final String DOWN_VOTE_KEY  = "downs";
+    public static final String OVER_18_KEY = "over_18";
+    public static final String NUM_COMMENTS_KEY = "num_comments";
+
+    @SerializedName(NUM_COMMENTS_KEY)
     private Integer numberOfComments;
     @SerializedName("author")
     private String author;
@@ -14,9 +19,9 @@ public class Submission {
     @SerializedName("secure_media_embed")
     private Object secureMediaEmbed;
 
-    @SerializedName("ups")
+    @SerializedName(UP_VOTE_KEY)
     private Integer ups;
-    @SerializedName("downs")
+    @SerializedName(DOWN_VOTE_KEY)
     private Integer downs;
     @SerializedName("name")
     private String name;
@@ -28,7 +33,7 @@ public class Submission {
     @SerializedName("subreddit_id")
     private String subreddit_id;
 
-    @SerializedName("over_18")
+    @SerializedName(OVER_18_KEY)
     private Boolean over_18;
 
     public Integer getNumberOfComments() {
