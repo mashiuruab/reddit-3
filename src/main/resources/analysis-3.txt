@@ -1,0 +1,40 @@
+Submission :
+
+"num_comments"
+"author"
+"ups"
+"downs"
+"over_18"
+"media_embed"
+"secure_media_embed"
+
+
+
+
+1. Find the authors with most influence on submission. It is  some kind of finding
+the users with submission where lots of  comments done.
+
+2. Find based on what the influence (comment influence) varies foremost (like  upvote,  downvote, numberOfComments,
+over_18) among the submissions. Here  we can find the pairwise cdf of (upvote, numberOfComments),
+(downvote, numberOfComments), (over_18, numberOfComments), (media_embed, numberOfComments)  etc
+
+Suppose for  pariwise cdf  (upvote, numberOfComments) we can show if there is any relation between
+numberOfComments  and upvote  count among all  of the submission available in reddit.
+
+The same  goes for  other parts also (downvote, numberOfComments), (over_18, numberOfComments),
+(media_embed, numberOfComments)
+
+3. Find subreddits with number of submissions. (Subreddits with  most number of submissions)
+
+4. Is there any relation between comments per subreddit and  submission per subreddit ?
+(Is there any relation of having more/less comment if a subreddit  has  more/less submission)
+
+5. Number of Submissions created on each day.
+
+6. Number of Comments created on each day.
+
+7. Number of Comments done on each hour. (Try to find  relation if the number of comment varies with
+other time of the day specially with that target hate hour we have found in the first project)
+
+8. Number of Submissions done on each hour (Try to find  relation if the number of submission varies with
+other time of the day specially with that target hate hour we have found in the first project)
