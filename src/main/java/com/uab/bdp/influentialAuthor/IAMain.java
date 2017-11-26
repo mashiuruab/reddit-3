@@ -27,6 +27,8 @@ public class IAMain {
         job.setMapperClass(IAMapper.class);
         job.setReducerClass(IAReducer.class);
 
+        job.setNumReduceTasks(20);
+
         job.setInputFormatClass(TextInputFormat.class);
         job.setOutputFormatClass(TextOutputFormat.class);
 
