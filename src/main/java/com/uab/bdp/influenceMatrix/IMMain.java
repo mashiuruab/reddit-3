@@ -27,7 +27,7 @@ public class IMMain {
         job.setMapperClass(IMMapper.class);
         job.setReducerClass(IMReducer.class);
 
-        job.setNumReduceTasks(20);
+        job.setNumReduceTasks(40);
 
         job.setInputFormatClass(TextInputFormat.class);
         job.setOutputFormatClass(TextOutputFormat.class);

@@ -9,4 +9,4 @@ Running job: job_1510166722528_0751
 
 hadoop  jar reddit-3-1.0-SNAPSHOT.jar com.uab.bdp.influenceMatrix.IMMain /user/jblkburn/reddit/submissions/* /user/mashiur/reddit-3/2/
 
-Running job: job_1510166722528_0758
+Running job: job_1510166722528_0759
