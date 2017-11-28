@@ -10,3 +10,16 @@ Running job: job_1510166722528_0751
 hadoop  jar reddit-3-1.0-SNAPSHOT.jar com.uab.bdp.influenceMatrix.IMMain /user/jblkburn/reddit/submissions/* /user/mashiur/reddit-3/2/
 
 Running job: job_1510166722528_0759
+
+
+3 + 4
+
+hadoop  jar reddit-3-1.0-SNAPSHOT.jar com.uab.bdp.mostsubmission.MSubmissionMain /user/jblkburn/reddit/submissions/* /user/mashiur/reddit-3/3And4/
+
+Running job: job_1510166722528_0761
+
+5 + 6
+
+hadoop  jar reddit-3-1.0-SNAPSHOT.jar com.uab.bdp.perday.PDMain /user/jblkburn/reddit/submissions/* /user/mashiur/reddit-3/5And6/
+
+Running job: job_1510166722528_0762
