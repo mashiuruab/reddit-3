@@ -23,3 +23,11 @@ Running job: job_1510166722528_0761
 hadoop  jar reddit-3-1.0-SNAPSHOT.jar com.uab.bdp.perday.PDMain /user/jblkburn/reddit/submissions/* /user/mashiur/reddit-3/5And6/
 
 Running job: job_1510166722528_0762
+
+***********KMeans
+
+hadoop  jar reddit-3-1.0-SNAPSHOT.jar  com.uab.bdp.KMeans.TFIDF.TFMain /user/jblkburn/reddit/comments/* /user/mashiur/reddit-3/TFIDF/
+
+Running job: job_1510166722528_0765
+
+
