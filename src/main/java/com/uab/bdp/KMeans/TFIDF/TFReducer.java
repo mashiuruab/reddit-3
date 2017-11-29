@@ -29,6 +29,10 @@ public class TFReducer extends Reducer<Text, MapWritable, Text, Text> {
 
         for (MapWritable tfMap : values) {
 
+            if (totalNumberOfDocuments == 1000) {
+                break;
+            }
+
             for(Map.Entry<Writable, Writable> tfEntry : tfMap.entrySet()) {
                 Text termKey = (Text) tfEntry.getKey();
                 DoubleWritable termFreqValue = (DoubleWritable) tfEntry.getValue();

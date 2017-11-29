@@ -24,10 +24,21 @@ hadoop  jar reddit-3-1.0-SNAPSHOT.jar com.uab.bdp.perday.PDMain /user/jblkburn/r
 
 Running job: job_1510166722528_0762
 
+7 + 8
+
+hadoop  jar reddit-3-1.0-SNAPSHOT.jar com.uab.bdp.perhour.PHMain /user/jblkburn/reddit/submissions/* /user/mashiur/reddit-3/7And8/
+
+Running job: job_1510166722528_0773
+
+
 ***********KMeans
 
 hadoop  jar reddit-3-1.0-SNAPSHOT.jar  com.uab.bdp.KMeans.TFIDF.TFMain /user/jblkburn/reddit/comments/* /user/mashiur/reddit-3/TFIDF/
 
-Running job: job_1510166722528_0765
+Running job: job_1510166722528_0771
+
+************test-KMeans
+
+hadoop  jar target/reddit-3-1.0-SNAPSHOT.jar  com.uab.bdp.KMeans.TFIDF.MainKMeans /home/mashiur/hdfs/kmeans/input_root/ /home/mashiur/hdfs/kmeans/output_root/
 
 

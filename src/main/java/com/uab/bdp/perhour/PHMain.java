@@ -1,8 +1,8 @@
-package com.uab.bdp.KMeans.TFIDF;
+package com.uab.bdp.perhour;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
-import org.apache.hadoop.io.MapWritable;
+import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
@@ -10,23 +10,23 @@ import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 
-public class TFMain {
+public class PHMain {
     public static void main(String[] args) throws Exception {
         Configuration conf = new Configuration();
 
-        Job job = new Job(conf, "TF IDF Calculation");
+        Job job = new Job(conf, "Submission and Comment per hour");
 
-        job.setJarByClass(TFMain.class);
+        job.setJarByClass(PHMain.class);
         job.setMapOutputKeyClass(Text.class);
-        job.setMapOutputValueClass(MapWritable.class);
+        job.setMapOutputValueClass(IntWritable.class);
 
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(Text.class);
 
-        job.setMapperClass(TFMapper.class);
-        job.setReducerClass(TFReducer.class);
+        job.setMapperClass(PHMapper.class);
+        job.setReducerClass(PHReducer.class);
 
-        job.setNumReduceTasks(4000);
+        job.setNumReduceTasks(40);
 
         job.setInputFormatClass(TextInputFormat.class);
         job.setOutputFormatClass(TextOutputFormat.class);
