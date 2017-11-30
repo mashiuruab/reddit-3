@@ -2,6 +2,7 @@ package com.uab.bdp.influenceMatrix.helper;
 
 import com.google.gson.Gson;
 import com.uab.bdp.influenceMatrix.helper.model.DataModel;
+import com.uab.bdp.influenceMatrix.helper.model.GenericModel;
 import org.apache.hadoop.io.DoubleWritable;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
@@ -18,13 +19,15 @@ public class HPMapper extends Mapper<LongWritable, Text, Text, DoubleWritable> {
 
         String[] splitter = json.toString().split("\\s+");
 
-        DataModel dataModel = get(splitter[1]);
+        GenericModel dataModel = get(splitter[1]);
 
+        /*context.write(new Text(splitter[0]),
+                new DoubleWritable(dataModel.getComment()));*/
         context.write(new Text(splitter[0]),
-                new DoubleWritable(dataModel.getOver_18()));
+                new DoubleWritable(dataModel.getSubmission()));
     }
 
-    private DataModel get(String json) {
-        return gson.fromJson(json, DataModel.class);
+    private GenericModel get(String json) {
+        return gson.fromJson(json, GenericModel.class);
     }
 }
