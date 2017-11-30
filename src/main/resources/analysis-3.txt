@@ -25,6 +25,11 @@ numberOfComments  and upvote  count among all  of the submission available in re
 The same  goes for  other parts also (downvote, numberOfComments), (over_18, numberOfComments),
 (media_embed, numberOfComments)
 
+2.1 (upvote, numberOfComments)
+2.2 (downvote, numberOfComments)
+2.3 (over_18, numberOfComments)
+2.4 (media_embed, numberOfComments)
+
 (influenceMatrix)
 
 3. Find subreddits with number of submissions. (Subreddits with  most number of submissions)
