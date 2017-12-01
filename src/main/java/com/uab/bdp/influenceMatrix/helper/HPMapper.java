@@ -21,10 +21,10 @@ public class HPMapper extends Mapper<LongWritable, Text, Text, DoubleWritable> {
 
         GenericModel dataModel = get(splitter[1]);
 
-        /*context.write(new Text(splitter[0]),
-                new DoubleWritable(dataModel.getComment()));*/
         context.write(new Text(splitter[0]),
-                new DoubleWritable(dataModel.getSubmission()));
+                new DoubleWritable(dataModel.getComment()));
+        /*context.write(new Text(splitter[0]),
+                new DoubleWritable(dataModel.getSubmission()));*/
     }
 
     private GenericModel get(String json) {
