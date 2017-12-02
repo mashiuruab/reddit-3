@@ -21,13 +21,13 @@ public class CGMapper extends Mapper<LongWritable, Text, Text, MapWritable> {
     private IntWritable  one = new IntWritable(1);
 
     public static final String IMAGE_KEY = "image";
-    public static final String AUDIO_KEY = "audio";
+    public static final String RICH_KEY = "rich";
     public static final String VIDEO_KEY = "video";
 
     public static Text IS_SELF = new Text(CGSubmission.IS_SELF_KEY);
     public static Text SELF_TEXT = new Text(CGSubmission.SELF_TEXT_KEY);
     public static Text IMAGE = new Text(IMAGE_KEY);
-    public static Text AUDIO = new Text(AUDIO_KEY);
+    public static Text RICH = new Text(RICH_KEY);
     public static Text VIDEO = new Text(VIDEO_KEY);
 
     @Override
@@ -58,8 +58,8 @@ public class CGMapper extends Mapper<LongWritable, Text, Text, MapWritable> {
 
         if (cgSubmission.getMedia() != null
                 && cgSubmission.getMedia().getOembed() != null
-                && AUDIO_KEY.equals(cgSubmission.getMedia().getOembed().getType())) {
-            outMap.put(AUDIO, one);
+                && RICH_KEY.equals(cgSubmission.getMedia().getOembed().getType())) {
+            outMap.put(RICH, one);
         }
 
         if (cgSubmission.getMedia() != null

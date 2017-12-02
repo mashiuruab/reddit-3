@@ -21,7 +21,7 @@ public class CGReducer extends Reducer<Text, MapWritable, Text, Text> {
         double totalSelf = 0;
         double totalText = 0;
         double totalImage = 0;
-        double totalAudio = 0;
+        double totalRichType = 0;
         double totalVideo = 0;
 
         for (MapWritable map : values) {
@@ -37,8 +37,8 @@ public class CGReducer extends Reducer<Text, MapWritable, Text, Text> {
                     totalText++;
                 }
 
-                if(entryKey.equals(CGMapper.AUDIO)) {
-                    totalAudio++;
+                if(entryKey.equals(CGMapper.RICH)) {
+                    totalRichType++;
                 }
 
                 if(entryKey.equals(CGMapper.VIDEO)) {
@@ -57,7 +57,7 @@ public class CGReducer extends Reducer<Text, MapWritable, Text, Text> {
         Map<String, Double> outMap = new HashMap<String, Double>();
         outMap.put(CGMapper.IS_SELF.toString(), totalSelf);
         outMap.put(CGMapper.SELF_TEXT.toString(), totalText);
-        outMap.put(CGMapper.AUDIO.toString(), totalAudio);
+        outMap.put(CGMapper.RICH.toString(), totalRichType);
         outMap.put(CGMapper.VIDEO.toString(), totalVideo);
         outMap.put(CGMapper.IMAGE.toString(), totalImage);
         outMap.put("totalSubmission", totalSubmission);

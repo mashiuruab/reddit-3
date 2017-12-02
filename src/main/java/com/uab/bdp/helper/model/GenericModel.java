@@ -12,7 +12,7 @@ public class GenericModel {
 
     @SerializedName(CGMapper.IMAGE_KEY)
     private Double image;
-    @SerializedName(CGMapper.AUDIO_KEY)
+    @SerializedName(CGMapper.RICH_KEY)
     private Double audio;
     @SerializedName(CGMapper.VIDEO_KEY)
     private Double video;
