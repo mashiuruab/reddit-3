@@ -50,3 +50,15 @@ other time of the day specially with that target hate hour we have found in the 
 
 8. Number of Submissions done on each hour (Try to find  relation if the number of submission varies with
 other time of the day specially with that target hate hour we have found in the first project)
+
+
+
+
+categorization
+
+
+self = "is_self",
+text = "selftext",
+image = "preview",
+audio = media
+video = media

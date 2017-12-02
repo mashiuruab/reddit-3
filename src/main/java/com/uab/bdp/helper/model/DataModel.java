@@ -1,4 +1,4 @@
-package com.uab.bdp.influenceMatrix.helper.model;
+package com.uab.bdp.helper.model;
 
 import com.google.gson.annotations.SerializedName;
 import com.uab.bdp.model.Submission;

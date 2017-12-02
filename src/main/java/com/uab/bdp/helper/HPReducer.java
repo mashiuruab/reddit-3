@@ -1,4 +1,4 @@
-package com.uab.bdp.influenceMatrix.helper;
+package com.uab.bdp.helper;
 
 import org.apache.hadoop.io.DoubleWritable;
 import org.apache.hadoop.io.Text;

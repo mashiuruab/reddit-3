@@ -1,0 +1,24 @@
+1. test
+
+
+rm(list=ls())
+
+df <- data.frame(x=rep(1:5, 5), val=sample(1:100, 25),
+variable=rep(paste0("category", 1:5), each=5))
+
+df2 <- data.frame(x=df[,1], val=df[,2], variable=df[,3])
+
+ggplot(data = df2, aes(x=x, y=val)) + geom_line(aes(colour=variable))
+
+2. original
+
+rm(list=ls())
+
+categories <- c("is_self", "text", "image", "audio", "video")
+
+df <- data.frame(date=rep(1:5, 5), submissions=sample(1:100, 25),
+categories=rep(categories, each=5))
+
+df2 <- data.frame(date=df[,1], submissions=df[,2], categories=df[,3])
+
+ggplot(data = df2, aes(x=date, y=submissions)) + geom_line(aes(colour=categories))

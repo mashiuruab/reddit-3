@@ -1,8 +1,8 @@
-package com.uab.bdp.influenceMatrix.helper;
+package com.uab.bdp.categorization;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
-import org.apache.hadoop.io.DoubleWritable;
+import org.apache.hadoop.io.MapWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
@@ -10,23 +10,23 @@ import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 
-public class HPMain {
+public class CGMain {
     public static void main(String[] args) throws Exception {
         Configuration conf = new Configuration();
 
-        Job job = new Job(conf,"Helper NumberOfComments, ups, downs, over_18");
+        Job job = new Job(conf, "Categorization of Reddit Content per day");
 
-        job.setJarByClass(HPMain.class);
+        job.setJarByClass(CGMain.class);
         job.setMapOutputKeyClass(Text.class);
-        job.setMapOutputValueClass(DoubleWritable.class);
+        job.setMapOutputValueClass(MapWritable.class);
 
         job.setOutputKeyClass(Text.class);
-        job.setOutputValueClass(DoubleWritable.class);
+        job.setOutputValueClass(Text.class);
 
-        job.setMapperClass(HPMapper.class);
-        job.setReducerClass(HPReducer.class);
+        job.setMapperClass(CGMapper.class);
+        job.setReducerClass(CGReducer.class);
 
-        job.setNumReduceTasks(1);
+        job.setNumReduceTasks(40);
 
         job.setInputFormatClass(TextInputFormat.class);
         job.setOutputFormatClass(TextOutputFormat.class);

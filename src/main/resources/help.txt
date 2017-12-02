@@ -42,3 +42,12 @@ Running job: job_1510166722528_0771
 hadoop  jar target/reddit-3-1.0-SNAPSHOT.jar  com.uab.bdp.KMeans.TFIDF.MainKMeans /home/mashiur/hdfs/kmeans/input_root/ /home/mashiur/hdfs/kmeans/output_root/
 
 
+
+
+
+categorization :
+
+
+hadoop  jar reddit-3-1.0-SNAPSHOT.jar com.uab.bdp.categorization.CGMain  /user/jblkburn/reddit/submissions/* /user/mashiur/reddit-3/categorization
+
+Running job: job_1510166722528_0817

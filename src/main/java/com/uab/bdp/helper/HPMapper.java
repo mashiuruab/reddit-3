@@ -1,8 +1,7 @@
-package com.uab.bdp.influenceMatrix.helper;
+package com.uab.bdp.helper;
 
 import com.google.gson.Gson;
-import com.uab.bdp.influenceMatrix.helper.model.DataModel;
-import com.uab.bdp.influenceMatrix.helper.model.GenericModel;
+import com.uab.bdp.helper.model.GenericModel;
 import org.apache.hadoop.io.DoubleWritable;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
@@ -21,10 +20,25 @@ public class HPMapper extends Mapper<LongWritable, Text, Text, DoubleWritable> {
 
         GenericModel dataModel = get(splitter[1]);
 
-        context.write(new Text(splitter[0]),
-                new DoubleWritable(dataModel.getComment()));
+        /*context.write(new Text(splitter[0]),
+                new DoubleWritable(dataModel.getComment()));*/
         /*context.write(new Text(splitter[0]),
                 new DoubleWritable(dataModel.getSubmission()));*/
+
+        /*context.write(new Text(splitter[0]),
+                new DoubleWritable(dataModel.getIs_self()));*/
+
+        /*context.write(new Text(splitter[0]),
+                new DoubleWritable(dataModel.getSelftext()));*/
+
+        /*context.write(new Text(splitter[0]),
+                new DoubleWritable(dataModel.getAudio()));*/
+
+        /*context.write(new Text(splitter[0]),
+                new DoubleWritable(dataModel.getVideo()));*/
+
+        /*context.write(new Text(splitter[0]),
+                new DoubleWritable(dataModel.getImage()));*/
     }
 
     private GenericModel get(String json) {

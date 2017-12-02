@@ -57,3 +57,37 @@ cdf_a <- ecdf(hourOfDay)
 hourCDFcolor <- rgb(0,1,0)
 
 plot(cdf_a, col=hourCDFcolor, main=NA, xlab= "Comments per Day", ylab= "CDF")
+
+
+
+3. Growth Rate
+#install.packages("plotly")
+#install.packages("plotly", repos="http://cran.rstudio.com/", dependencies=TRUE)
+
+library(ggplot2)
+
+rm(list=ls())
+
+A  <-  read.table("/home/mashiur/Documents/reddit-3/result/5-comments/part-r-00000", sep = "")
+
+df <-  data.frame(A)
+
+# getting  the legends
+x <- df[,1]
+y <- df[,2]
+
+x_vector <-  as.vector(x)
+y_vector <- as.vector(y)
+
+min_y <- min(y_vector)
+max_y  <- max(y_vector)
+
+min_y
+max_y
+
+norm_y = (y_vector-min(y_vector))/(max(y_vector)-min(y_vector))
+
+test_df <- data.frame(x_vector,norm_y)
+test_df2 <- test_df[order(test_df[,2],decreasing=TRUE),]
+
+ggplot(data=test_df) + geom_line()
