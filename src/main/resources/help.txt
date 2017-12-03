@@ -50,4 +50,4 @@ categorization :
 
 hadoop  jar reddit-3-1.0-SNAPSHOT.jar com.uab.bdp.categorization.CGMain  /user/jblkburn/reddit/submissions/* /user/mashiur/reddit-3/categorization
 
-Running job: job_1510166722528_0817
+Running job: job_1510166722528_0823

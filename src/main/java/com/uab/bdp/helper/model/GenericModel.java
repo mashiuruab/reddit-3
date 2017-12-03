@@ -2,6 +2,7 @@ package com.uab.bdp.helper.model;
 
 import com.google.gson.annotations.SerializedName;
 import com.uab.bdp.categorization.CGMapper;
+import com.uab.bdp.categorization.CGReducer;
 import com.uab.bdp.categorization.model.CGSubmission;
 
 public class GenericModel {
@@ -20,6 +21,8 @@ public class GenericModel {
     private Double is_self;
     @SerializedName(CGSubmission.SELF_TEXT_KEY)
     private Double selftext;
+    @SerializedName(CGReducer.MISC_KEY)
+    private Double misc;
 
     public Double getComment() {
         return comment;
@@ -47,5 +50,9 @@ public class GenericModel {
 
     public Double getSelftext() {
         return selftext;
+    }
+
+    public Double getMisc() {
+        return misc;
     }
 }

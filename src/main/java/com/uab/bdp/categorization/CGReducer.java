@@ -11,6 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class CGReducer extends Reducer<Text, MapWritable, Text, Text> {
+    public static final String MISC_KEY = "misc";
     private Gson gson = new Gson();
 
     @Override
@@ -54,13 +55,16 @@ public class CGReducer extends Reducer<Text, MapWritable, Text, Text> {
             totalSubmission++;
         }
 
+
+        double misc = totalSubmission - (totalSelf + totalText + totalRichType + totalVideo + totalImage);
+
         Map<String, Double> outMap = new HashMap<String, Double>();
         outMap.put(CGMapper.IS_SELF.toString(), totalSelf);
         outMap.put(CGMapper.SELF_TEXT.toString(), totalText);
         outMap.put(CGMapper.RICH.toString(), totalRichType);
         outMap.put(CGMapper.VIDEO.toString(), totalVideo);
         outMap.put(CGMapper.IMAGE.toString(), totalImage);
-        outMap.put("totalSubmission", totalSubmission);
+        outMap.put(MISC_KEY, misc);
 
         context.write(key, new Text(gson.toJson(outMap)));
     }
