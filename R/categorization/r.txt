@@ -22,3 +22,26 @@ categories=rep(categories, each=5))
 df2 <- data.frame(date=df[,1], submissions=df[,2], categories=df[,3])
 
 ggplot(data = df2, aes(x=date, y=submissions)) + geom_line(aes(colour=categories))
+
+
+
+3.real data
+
+rm(list=ls())
+
+library(ggplot2)
+
+merge_data  <-  read.table("/home/mashiur/Documents/reddit-3/result/categorization/mergedir/result", sep = "")
+
+df_md <-  data.frame(merge_data)
+
+
+categories <- c("is_self", "text", "image", "audio", "video")
+
+
+#data_frame <- data.frame(date=df_md[,1], submissions=df_md[,2],categories=rep(categories, each=427))
+
+data_frame <- data.frame(date=rep(1:427, 5), submissions=df_md[,2], categories=rep(categories, each=427))
+
+plot <- ggplot(data = data_frame, aes(x=date, y=submissions)) + geom_line(aes(colour=categories))
+plot + labs(x = "Days Between 31 May 2016 to 31 July 2017")

@@ -37,8 +37,8 @@ public class HPMapper extends Mapper<LongWritable, Text, Text, DoubleWritable> {
         /*context.write(new Text(splitter[0]),
                 new DoubleWritable(dataModel.getVideo()));*/
 
-        /*context.write(new Text(splitter[0]),
-                new DoubleWritable(dataModel.getImage()));*/
+        context.write(new Text(splitter[0]),
+                new DoubleWritable(dataModel.getImage()));
 
         /*context.write(new Text(splitter[0]),
                 new DoubleWritable(dataModel.getMisc()));*/
