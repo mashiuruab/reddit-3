@@ -51,3 +51,18 @@ categorization :
 hadoop  jar reddit-3-1.0-SNAPSHOT.jar com.uab.bdp.categorization.CGMain  /user/jblkburn/reddit/submissions/* /user/mashiur/reddit-3/categorization
 
 Running job: job_1510166722528_0823
+
+
+
+domain categorization :
+
+hadoop  jar reddit-3-1.0-SNAPSHOT.jar com.uab.bdp.domain.DomainMain  /user/jblkburn/reddit/submissions/* /user/mashiur/reddit-3/domaincategorization
+
+Running job: job_1510166722528_0824
+
+
+top domain :
+
+hadoop  jar reddit-3-1.0-SNAPSHOT.jar com.uab.bdp.domain.top.TopDomainMain  /user/jblkburn/reddit/submissions/* /user/mashiur/reddit-3/topdomain
+
+Running job: job_1510166722528_0845
