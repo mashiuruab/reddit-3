@@ -63,6 +63,11 @@ Running job: job_1510166722528_0824
 
 top domain :
 
-hadoop  jar reddit-3-1.0-SNAPSHOT.jar com.uab.bdp.domain.top.TopDomainMain  /user/jblkburn/reddit/submissions/* /user/mashiur/reddit-3/topdomain
+hadoop  jar target/reddit-3-1.0-SNAPSHOT.jar com.uab.bdp.domain.top.TopDomainMain  /home/mashiur/Documents/reddit-3/result/domaincategorization/* /home/mashiur/Documents/reddit-3/result/topdomain
 
-Running job: job_1510166722528_0845
+
+
+>>>>>>>> top  domain usage between 427 days
+
+
+hadoop  jar target/reddit-3-1.0-SNAPSHOT.jar com.uab.bdp.domain.usage.TopDomainUsageMain   /home/mashiur/Documents/reddit-3/result/domaincategorization/result /home/mashiur/Documents/reddit-3/result/domaincategorization/usage/1

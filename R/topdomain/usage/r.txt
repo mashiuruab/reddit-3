@@ -1,0 +1,41 @@
+****************top 5***************
+
+rm(list=ls())
+
+library(ggplot2)
+
+merge_data  <-  read.table("/home/mashiur/Documents/reddit-3/result/domaincategorization/usage/merge_result/top-5", sep = "")
+
+df_md <-  data.frame(merge_data)
+
+
+categories <- c("self", "i.redd.it", "youtube.com", "imgur.com", "i.imgur.com")
+
+
+data_frame <- data.frame(date=rep(1:66, 5), submissions=df_md[,2], categories=rep(categories, each=66))
+
+plot <- ggplot(data = data_frame, aes(x=date, y=submissions)) + geom_line(aes(colour=categories))
+plot + labs(x = "Days Between 13 June 2016 to 09 July 2017")
+
+
+
+****************top 10***************
+
+
+rm(list=ls())
+
+library(ggplot2)
+
+merge_data  <-  read.table("/home/mashiur/Documents/reddit-3/result/domaincategorization/usage/merge_result/top-10", sep = "")
+
+df_md <-  data.frame(merge_data)
+
+
+categories <- c("self", "i.redd.it", "youtube.com", "imgur.com", "i.imgur.com",
+"reddit.com", "i.reddituploads.com", "twitter.com", "gfycat.com", "soundcloud.com")
+
+
+data_frame <- data.frame(date=rep(1:66, 10), submissions=df_md[,2], categories=rep(categories, each=66))
+
+plot <- ggplot(data = data_frame, aes(x=date, y=submissions)) + geom_line(aes(colour=categories))
+plot + labs(x = "Days Between 13 June 2016 to 09 July 2017")

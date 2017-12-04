@@ -1,39 +1,43 @@
 package com.uab.bdp.domain.top;
 
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.uab.bdp.domain.DomainMapper;
 import com.uab.bdp.domain.model.DomainModel;
 import org.apache.commons.lang.StringUtils;
+import org.apache.hadoop.io.DoubleWritable;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 
 import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.Map;
 
-public class TopDomainMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
+public class TopDomainMapper extends Mapper<LongWritable, Text, Text, DoubleWritable> {
     private Gson gson = new Gson();
 
-    private Text SELF = new Text(DomainMapper.SELF_KEY);
     private IntWritable one  = new IntWritable(1);
 
     @Override
     protected void map(LongWritable key, Text json, Context context)
             throws IOException, InterruptedException {
-        DomainModel model  = get(json);
+        String[] splitted = json.toString().split("\\s+");
 
-        if (StringUtils.isEmpty(model.getDomain())) {
+        if (splitted.length != 2) {
             return;
         }
 
-        if (model.getDomain().startsWith(DomainMapper.SELF_KEY)) {
-            context.write(SELF, one);
-        } else {
-            context.write(new Text(model.getDomain()), one);
+        Map<String,  Double> domainMap = get(splitted[1]);
+
+        for (Map.Entry<String, Double> entry : domainMap.entrySet()) {
+            context.write(new Text(entry.getKey()),  new DoubleWritable(entry.getValue()));
         }
     }
 
-    private DomainModel get(Text json) {
-        return gson.fromJson(json.toString(), DomainModel.class);
+    private Map<String, Double> get(String json) {
+        Type type = new TypeToken<Map<String, Double>>(){}.getType();
+        return gson.fromJson(json, type);
     }
 }
