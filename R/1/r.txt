@@ -26,7 +26,7 @@ norm_y = (y_vector-min(y_vector))/(max(y_vector)-min(y_vector))
 test_df <- data.frame(x_vector,norm_y)
 test_df2 <- test_df[order(test_df[,2],decreasing=TRUE),]
 
-barplot(test_df2[,2],names.arg=test_df2[,1], col=c("blue"), xlab = "Author", ylab = "Comments")
+barplot(test_df2[,2],names.arg=test_df2[,1], col=c("blue"), xlab = "Author", ylab = "Comments Per Submission")
 
 
 
